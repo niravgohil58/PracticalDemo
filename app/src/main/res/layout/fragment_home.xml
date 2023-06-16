@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icMenu"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_main_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/edtSearch"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toTopOf="@+id/top_Guide" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtSearch"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/white_rounded_background"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/_10sdp"
+            android:hint="@string/search_product"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/icMenu"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide"
+            app:layout_constraintTop_toTopOf="@+id/top_Guide" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/categoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/sneakers"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_22sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noOfProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/_0_products_found"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/categoryTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFilter"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintBottom_toBottomOf="@+id/noOfProduct"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide"
+            app:layout_constraintTop_toTopOf="@+id/categoryTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPriceFilter"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_price_filter"
+            app:layout_constraintBottom_toBottomOf="@+id/noOfProduct"
+            app:layout_constraintRight_toLeftOf="@+id/ivFilter"
+            app:layout_constraintTop_toTopOf="@+id/categoryTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            tools:listitem="@layout/item_list_product"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            app:layout_constraintTop_toBottomOf="@+id/noOfProduct"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.DetailFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_Guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTopBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/iv_top_black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_130sdp"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTopBlack"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivTopBlack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="@string/nike"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/_200sdp"
+            android:maxLines="1"
+            android:text="@string/nike"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="@string/label_price"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDec"
+            app:layout_constraintRight_toRightOf="@id/right_Guide"
+            app:layout_constraintTop_toTopOf="@+id/txtName" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@color/devider"
+            app:layout_constraintLeft_toLeftOf="@id/left_Guide"
+            app:layout_constraintRight_toRightOf="@id/right_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/txtDec" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDecMain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_dec"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@color/devider"
+            app:layout_constraintLeft_toLeftOf="@id/left_Guide"
+            app:layout_constraintRight_toRightOf="@id/right_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/txtDecMain" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/rating"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <per.wsj.library.AndRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:rating="2.5"
+            app:layout_constraintLeft_toLeftOf="@id/left_Guide"
+            app:layout_constraintTop_toBottomOf="@+id/txtRating"
+            app:starColor="@color/yellow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/_000"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+            app:layout_constraintLeft_toRightOf="@+id/ratingBar"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide"
+            app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_42sdp"
+            android:background="@drawable/black_button"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_Guide"
+            app:layout_constraintLeft_toLeftOf="@+id/left_Guide"
+            app:layout_constraintRight_toRightOf="@+id/right_Guide" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
